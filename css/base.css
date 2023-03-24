@@ -80,8 +80,8 @@ button:not(:disabled):not(.disabled) {
 .btn-primary,
 .btn-primary a {
    color:#fff;
-   background-color:#495f3f;
-   border-color:#495f3f;
+   background-color:#495fef;
+   border-color:#495fef;
 }
 
 .round-pill {
