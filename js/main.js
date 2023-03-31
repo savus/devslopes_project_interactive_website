@@ -29,12 +29,24 @@ const setTheme = (val) => {
    }
 };
 
+if (currentTheme) {
+   root.setAttribute(dataTheme, currentTheme);
+   switcher.forEach((btn) => {
+      btn.classList.remove(active);
+   });
+}
+
+if (currentTheme === dark) {
+   switcher[1].classList.add(active);
+} else {
+   switcher[0].classList.add(active);
+}
+
 const setActive = (elm, selector) => {
    if (document.querySelector(`${selector}.${active}`) !== null) {
       document.querySelector(`${selector}.${active}`).classList.remove(active);
-   } else {
-      elm.classList.add(active);
-   }
+   } 
+   elm.classList.add(active);
 };
 
 toggleTheme.addEventListener('click', function() {
