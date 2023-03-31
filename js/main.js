@@ -29,6 +29,14 @@ const setTheme = (val) => {
    }
 };
 
+const setActive = (elm, selector) => {
+   if (document.querySelector(`${selector}.${active}`) !== null) {
+      document.querySelector(`${selector}.${active}`).classList.remove(active);
+   } else {
+      elm.classList.add(active);
+   }
+};
+
 toggleTheme.addEventListener('click', function() {
    const tab = this.parentElement.parentElement;
    if (!tab.className.includes(open)) {
@@ -46,7 +54,6 @@ for (const elm of switcher) {
       setTheme(toggle);
    });
 }
-
 
 /* Modal */ 
 const openModal = document.querySelectorAll(modalOpen);
