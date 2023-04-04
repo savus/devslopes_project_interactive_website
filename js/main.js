@@ -17,6 +17,91 @@ const portfolioData = '[data-item]';
 
 const root = document.documentElement;
 
+const portFolioInfo = [
+   { 
+      dataItem : 'web',
+      imgSrc : './assets/images/portfolio-1.jpg',
+      divText : 'Web Development',
+      headerText : 'Food Website',
+   },
+   { 
+      dataItem : 'web',
+      imgSrc : './assets/images/portfolio-2.jpg',
+      divText : 'Web Development',
+      headerText : 'Skate Website',
+   },
+   { 
+      dataItem : 'web',
+      imgSrc : './assets/images/portfolio-3.jpg',
+      divText : 'Web Development',
+      headerText : 'Eating Website',
+   },
+   { 
+      dataItem : 'ui',
+      imgSrc : './assets/images/portfolio-4.jpg',
+      divText : 'UI Design',
+      headerText : 'Cool Design',
+   },
+   { 
+      dataItem : 'app',
+      imgSrc : './assets/images/portfolio-5.jpg',
+      divText : 'App Development',
+      headerText : 'Game App',
+   },
+   { 
+      dataItem : 'app',
+      imgSrc : './assets/images/portfolio-6.jpg',
+      divText : 'App Development',
+      headerText : 'Gambling App',
+   },
+   { 
+      dataItem : 'app',
+      imgSrc : './assets/images/portfolio-7.jpg',
+      divText : 'App Development',
+      headerText : 'Money Website',
+   },
+   { 
+      dataItem : 'ui',
+      imgSrc : './assets/images/portfolio-8.jpg',
+      divText : 'UI Design',
+      headerText : 'Fantastic Design',
+   },
+];
+
+for (const card of portFolioInfo) {
+   const portfolioCard = document.createElement('div');
+   
+   portfolioCard.className = 'portfolio-card';
+   portfolioCard.setAttribute('data-item', card.dataItem);
+   
+   const cardBody = document.createElement('div');
+   cardBody.className = 'card-body';
+   
+   const image = document.createElement('img');
+   image.setAttribute('src', card.imgSrc);
+   image.setAttribute('alt', 'portfolio-icon');
+   cardBody.appendChild(image);
+   
+   const link = document.createElement('a');
+   link.setAttribute('href', '#');
+   link.className = 'card-popup-box';
+   
+   const linkDiv = document.createElement('div');
+   linkDiv.innerHTML = card.divText;
+   link.appendChild(linkDiv);
+   
+   const linkHeader = document.createElement('h3');
+   linkHeader.innerHTML = card.headerText;
+   link.appendChild(linkHeader);
+   
+   cardBody.appendChild(link);
+   
+   portfolioCard.appendChild(cardBody);
+   
+   document.querySelector('.portfolio-grid').appendChild(portfolioCard);
+}
+
+
 /* Theme */
 
 const toggleTheme = document.querySelector(themeTab);
@@ -113,11 +198,12 @@ for (const elm of openModal) {
    elm.addEventListener('click', function() {
       const modalId = this.dataset.open;
       document.getElementById(modalId).classList.add(isVisible);
-   });
-}
+   });   
+}   
 
 for (const elm of closeModal) {
    elm.addEventListener('click', function() {
       this.parentElement.parentElement.classList.remove(isVisible);
-   });
-}  
+   });   
+}   
+
