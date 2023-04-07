@@ -17,89 +17,89 @@ const portfolioData = '[data-item]';
 
 const root = document.documentElement;
 
-const portFolioInfo = [
-   { 
-      dataItem : 'web',
-      imgSrc : './assets/images/portfolio-1.jpg',
-      divText : 'Web Development',
-      headerText : 'Food Website',
-   },
-   { 
-      dataItem : 'web',
-      imgSrc : './assets/images/portfolio-2.jpg',
-      divText : 'Web Development',
-      headerText : 'Skate Website',
-   },
-   { 
-      dataItem : 'web',
-      imgSrc : './assets/images/portfolio-3.jpg',
-      divText : 'Web Development',
-      headerText : 'Eating Website',
-   },
-   { 
-      dataItem : 'ui',
-      imgSrc : './assets/images/portfolio-4.jpg',
-      divText : 'UI Design',
-      headerText : 'Cool Design',
-   },
-   { 
-      dataItem : 'app',
-      imgSrc : './assets/images/portfolio-5.jpg',
-      divText : 'App Development',
-      headerText : 'Game App',
-   },
-   { 
-      dataItem : 'app',
-      imgSrc : './assets/images/portfolio-6.jpg',
-      divText : 'App Development',
-      headerText : 'Gambling App',
-   },
-   { 
-      dataItem : 'app',
-      imgSrc : './assets/images/portfolio-7.jpg',
-      divText : 'App Development',
-      headerText : 'Money Website',
-   },
-   { 
-      dataItem : 'ui',
-      imgSrc : './assets/images/portfolio-8.jpg',
-      divText : 'UI Design',
-      headerText : 'Fantastic Design',
-   },
-];
+// const portFolioInfo = [
+//    { 
+//       dataItem : 'web',
+//       imgSrc : './assets/images/portfolio-1.jpg',
+//       divText : 'Web Development',
+//       headerText : 'Food Website',
+//    },
+//    { 
+//       dataItem : 'web',
+//       imgSrc : './assets/images/portfolio-2.jpg',
+//       divText : 'Web Development',
+//       headerText : 'Skate Website',
+//    },
+//    { 
+//       dataItem : 'web',
+//       imgSrc : './assets/images/portfolio-3.jpg',
+//       divText : 'Web Development',
+//       headerText : 'Eating Website',
+//    },
+//    { 
+//       dataItem : 'ui',
+//       imgSrc : './assets/images/portfolio-4.jpg',
+//       divText : 'UI Design',
+//       headerText : 'Cool Design',
+//    },
+//    { 
+//       dataItem : 'app',
+//       imgSrc : './assets/images/portfolio-5.jpg',
+//       divText : 'App Development',
+//       headerText : 'Game App',
+//    },
+//    { 
+//       dataItem : 'app',
+//       imgSrc : './assets/images/portfolio-6.jpg',
+//       divText : 'App Development',
+//       headerText : 'Gambling App',
+//    },
+//    { 
+//       dataItem : 'app',
+//       imgSrc : './assets/images/portfolio-7.jpg',
+//       divText : 'App Development',
+//       headerText : 'Money Website',
+//    },
+//    { 
+//       dataItem : 'ui',
+//       imgSrc : './assets/images/portfolio-8.jpg',
+//       divText : 'UI Design',
+//       headerText : 'Fantastic Design',
+//    },
+// ];
 
-for (const card of portFolioInfo) {
-   const portfolioCard = document.createElement('div');
+// for (const card of portFolioInfo) {
+//    const portfolioCard = document.createElement('div');
    
-   portfolioCard.className = 'portfolio-card';
-   portfolioCard.setAttribute('data-item', card.dataItem);
+//    portfolioCard.className = 'portfolio-card';
+//    portfolioCard.setAttribute('data-item', card.dataItem);
    
-   const cardBody = document.createElement('div');
-   cardBody.className = 'card-body';
+//    const cardBody = document.createElement('div');
+//    cardBody.className = 'card-body';
    
-   const image = document.createElement('img');
-   image.setAttribute('src', card.imgSrc);
-   image.setAttribute('alt', 'portfolio-icon');
-   cardBody.appendChild(image);
+//    const image = document.createElement('img');
+//    image.setAttribute('src', card.imgSrc);
+//    image.setAttribute('alt', 'portfolio-icon');
+//    cardBody.appendChild(image);
    
-   const link = document.createElement('a');
-   link.setAttribute('href', '#');
-   link.className = 'card-popup-box';
+//    const link = document.createElement('a');
+//    link.setAttribute('href', '#');
+//    link.className = 'card-popup-box';
    
-   const linkDiv = document.createElement('div');
-   linkDiv.innerHTML = card.divText;
-   link.appendChild(linkDiv);
+//    const linkDiv = document.createElement('div');
+//    linkDiv.innerHTML = card.divText;
+//    link.appendChild(linkDiv);
    
-   const linkHeader = document.createElement('h3');
-   linkHeader.innerHTML = card.headerText;
-   link.appendChild(linkHeader);
+//    const linkHeader = document.createElement('h3');
+//    linkHeader.innerHTML = card.headerText;
+//    link.appendChild(linkHeader);
    
-   cardBody.appendChild(link);
+//    cardBody.appendChild(link);
    
-   portfolioCard.appendChild(cardBody);
+//    portfolioCard.appendChild(cardBody);
    
-   document.querySelector('.portfolio-grid').appendChild(portfolioCard);
-}
+//    document.querySelector('.portfolio-grid').appendChild(portfolioCard);
+// }
 
 
 /* Theme */
