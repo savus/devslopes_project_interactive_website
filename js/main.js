@@ -192,8 +192,7 @@ for (const link of filterLink) {
 const openModal = document.querySelectorAll(modalOpen);
 const closeModal = document.querySelectorAll(modalClose);
 
-
-// Full site modal 'open buttons'
+// Modal/Full site modal 'open buttons'
 for (const elm of openModal) {
    elm.addEventListener('click', function() {
       const modalId = this.dataset.open;
@@ -203,7 +202,20 @@ for (const elm of openModal) {
 
 for (const elm of closeModal) {
    elm.addEventListener('click', function() {
-      this.parentElement.parentElement.classList.remove(isVisible);
+      this.parentElement.parentElement.parentElement.classList.remove(isVisible);
    });   
 }   
 
+//Modal 
+document.addEventListener('click', (e) => {
+   const element = document.querySelector(`.modal.${isVisible}`);
+   if (e.target === document.querySelector(`.modal.${isVisible}`)) {
+      document.querySelector('.modal.is-visible').classList.remove(isVisible);
+   }
+});
+
+document.addEventListener('keyup', (e) => {
+   if (e.key === 'Escape') {
+      document.querySelector('.modal.is-visible').classList.remove(isVisible);
+   }
+});
