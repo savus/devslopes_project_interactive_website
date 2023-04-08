@@ -159,9 +159,9 @@ function createPortfolioCard(card) {
    document.querySelector('.portfolio-grid').innerHTML += portfolioTemplate;
 }
 
-// for (const card of uniqueData.portfolioCards) {
-//    createPortfolioCard(card);
-// }
+for (const card of uniqueData.portfolioCards) {
+   createPortfolioCard(card);
+}
 
 function createModal(modalObject) {
    const modalTemplate = 
@@ -190,9 +190,9 @@ function createModal(modalObject) {
    document.body.innerHTML += modalTemplate;
 }
 
-// for (const elm of uniqueData.modals) {
-//    createModal(elm);
-// }
+for (const elm of uniqueData.modals) {
+   createModal(elm);
+}
 
 
 
