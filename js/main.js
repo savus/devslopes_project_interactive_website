@@ -17,89 +17,183 @@ const portfolioData = '[data-item]';
 
 const root = document.documentElement;
 
-// const portFolioInfo = [
-//    { 
-//       dataItem : 'web',
-//       imgSrc : './assets/images/portfolio-1.jpg',
-//       divText : 'Web Development',
-//       headerText : 'Food Website',
-//    },
-//    { 
-//       dataItem : 'web',
-//       imgSrc : './assets/images/portfolio-2.jpg',
-//       divText : 'Web Development',
-//       headerText : 'Skate Website',
-//    },
-//    { 
-//       dataItem : 'web',
-//       imgSrc : './assets/images/portfolio-3.jpg',
-//       divText : 'Web Development',
-//       headerText : 'Eating Website',
-//    },
-//    { 
-//       dataItem : 'ui',
-//       imgSrc : './assets/images/portfolio-4.jpg',
-//       divText : 'UI Design',
-//       headerText : 'Cool Design',
-//    },
-//    { 
-//       dataItem : 'app',
-//       imgSrc : './assets/images/portfolio-5.jpg',
-//       divText : 'App Development',
-//       headerText : 'Game App',
-//    },
-//    { 
-//       dataItem : 'app',
-//       imgSrc : './assets/images/portfolio-6.jpg',
-//       divText : 'App Development',
-//       headerText : 'Gambling App',
-//    },
-//    { 
-//       dataItem : 'app',
-//       imgSrc : './assets/images/portfolio-7.jpg',
-//       divText : 'App Development',
-//       headerText : 'Money Website',
-//    },
-//    { 
-//       dataItem : 'ui',
-//       imgSrc : './assets/images/portfolio-8.jpg',
-//       divText : 'UI Design',
-//       headerText : 'Fantastic Design',
-//    },
-// ];
+const uniqueData = {
+   portfolioCards: [
+      { 
+         dataOpen: 'web-1',
+         dataItem : 'web',
+         imgSrc : './assets/images/portfolio-1.jpg',
+         divText : 'Web Development',
+         headerText : 'Food Website',
+      },
+      { 
+         dataOpen: 'web-2',
+         dataItem : 'web',
+         imgSrc : './assets/images/portfolio-2.jpg',
+         divText : 'Web Development',
+         headerText : 'Skate Website',
+      },
+      { 
+         dataOpen: 'web-3',
+         dataItem : 'web',
+         imgSrc : './assets/images/portfolio-3.jpg',
+         divText : 'Web Development',
+         headerText : 'Eating Website',
+      },
+      { 
+         dataOpen: 'ui-1',
+         dataItem : 'ui',
+         imgSrc : './assets/images/portfolio-4.jpg',
+         divText : 'UI Design',
+         headerText : 'Cool Design',
+      },
+      { 
+         dataOpen: 'app-1',
+         dataItem : 'app',
+         imgSrc : './assets/images/portfolio-5.jpg',
+         divText : 'App Development',
+         headerText : 'Game App',
+      },
+      { 
+         dataOpen : 'app-2',
+         dataItem : 'app',
+         imgSrc : './assets/images/portfolio-6.jpg',
+         divText : 'App Development',
+         headerText : 'Gambling App',
+      },
+      { 
+         dataOpen : 'app-3',
+         dataItem : 'app',
+         imgSrc : './assets/images/portfolio-7.jpg',
+         divText : 'App Development',
+         headerText : 'Money Website',
+      },
+      { 
+         dataOpen : 'ui-2',
+         dataItem : 'ui',
+         imgSrc : './assets/images/portfolio-8.jpg',
+         divText : 'UI Design',
+         headerText : 'Fantastic Design',
+      }
+   ],
 
-// for (const card of portFolioInfo) {
-//    const portfolioCard = document.createElement('div');
-   
-//    portfolioCard.className = 'portfolio-card';
-//    portfolioCard.setAttribute('data-item', card.dataItem);
-   
-//    const cardBody = document.createElement('div');
-//    cardBody.className = 'card-body';
-   
-//    const image = document.createElement('img');
-//    image.setAttribute('src', card.imgSrc);
-//    image.setAttribute('alt', 'portfolio-icon');
-//    cardBody.appendChild(image);
-   
-//    const link = document.createElement('a');
-//    link.setAttribute('href', '#');
-//    link.className = 'card-popup-box';
-   
-//    const linkDiv = document.createElement('div');
-//    linkDiv.innerHTML = card.divText;
-//    link.appendChild(linkDiv);
-   
-//    const linkHeader = document.createElement('h3');
-//    linkHeader.innerHTML = card.headerText;
-//    link.appendChild(linkHeader);
-   
-//    cardBody.appendChild(link);
-   
-//    portfolioCard.appendChild(cardBody);
-   
-//    document.querySelector('.portfolio-grid').appendChild(portfolioCard);
+   modals: [
+      {
+         id: 'web-1',
+         headerText: 'Web Project 1',
+         imgSrc: './assets/images/portfolio-1.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'web-2',
+         headerText: 'Web Project 2',
+         imgSrc: './assets/images/portfolio-2.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'web-3',
+         headerText: 'Web Project 3',
+         imgSrc: './assets/images/portfolio-3.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'app-1',
+         headerText: 'App Project 1',
+         imgSrc: './assets/images/portfolio-4.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'app-2',
+         headerText: 'App Project 2',
+         imgSrc: './assets/images/portfolio-5.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'app-3',
+         headerText: 'App Project 3',
+         imgSrc: './assets/images/portfolio-6.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'ui-1',
+         headerText: 'UI Project 1',
+         imgSrc: './assets/images/portfolio-7.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+     },
+     {
+         id: 'ui-2',
+         headerText: 'UI Project 2',
+         imgSrc: './assets/images/portfolio-8.jpg',
+         strongText: 'My first awesome website',
+         paragraph1: 'Lorem ipsum',
+         paragraph2: 'lorem ipsum'
+      }
+   ]
+};
+
+function createPortfolioCard(card) {
+   const portfolioTemplate = `
+      <div class="portfolio-card" data-item="${card.dataItem}" data-open="${card.dataOpen}">
+         <div class="card-body">
+            <img src="${card.imgSrc}" alt="portfolio-icon">
+            <div class="card-popup-box">
+               <div>${card.divText}</div>
+               <h3>${card.headerText}</h3>
+            </div>
+         </div>
+      </div>`;
+   document.querySelector('.portfolio-grid').innerHTML += portfolioTemplate;
+}
+
+// for (const card of uniqueData.portfolioCards) {
+//    createPortfolioCard(card);
 // }
+
+function createModal(modalObject) {
+   const modalTemplate = 
+   `<div class="modal" id="${modalObject.id}" data-animation="slideInOutTop">
+       <div class="modal-dialog">
+           <header class="modal-header">
+               <h3>${modalObject.headerText}</h3>
+               <i class="fas fa-times" data-close></i>
+           </header>
+           <div class="modal-body">
+               <div class="img-wrapper">
+                   <img src="${modalObject.imgSrc}" alt="popup image">
+               </div>
+               <div class="text-wrapper">
+                   <p>
+                       <strong>
+                       ${modalObject.strongText}
+                       </strong>
+                   </p>
+                   <p>${modalObject.paragraph1}</p>
+                   <p>${modalObject.paragraph2}</p>
+               </div>
+           </div>
+       </div>
+   </div>`;
+   document.body.innerHTML += modalTemplate;
+}
+
+// for (const elm of uniqueData.modals) {
+//    createModal(elm);
+// }
+
 
 
 /* Theme */
