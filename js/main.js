@@ -314,29 +314,40 @@ document.addEventListener('keyup', (e) => {
    }
 });
 
+/* Carousel */
 
-console.log('connected');
-const buttons = document.querySelectorAll('.slide-ctrl-container button');
 const slides = document.querySelectorAll('.review-item');
-console.log(slides);
-console.log(buttons);
+const slideBtns = document.querySelectorAll('.slide-ctrl-container button');
 
-const current = Math.floor(Math.random() * slides.length);
-const next = (current < slides.length - 1) ? current + 1 : 0;
-const prev = (current - 1 < 0) ? slides.length - 1 : current - 1; 
+let currentSlider = Math.floor(Math.random() * slides.length);
+let nextSlider = (currentSlider < slides.length - 1) ? currentSlider + 1 : 0;
+let prevSlider = (currentSlider > 0) ? currentSlider - 1 : slides.length - 1;
 
-console.log('current', current);
-console.log('next', next);
-console.log('prev', prev);
+const updateCarousel = () => {
+   slides.forEach((slide) => {
+      slide.classList.remove('active', 'previous', 'next');
+   });;
+   slides[prevSlider].classList.add('previous');
+   slides[currentSlider].classList.add('active');
+   slides[nextSlider].classList.add('next');
+};
 
+const goToNum = (num) => {
+   currentSlider = num;
+   nextSlider = (currentSlider < slides.length - 1) ? currentSlider + 1 : 0;
+   prevSlider = (currentSlider > 0) ? currentSlider - 1 : slides.length - 1;
+   
+   updateCarousel();
+   console.log('prev', prevSlider);
+   console.log('current', currentSlider);
+   console.log('next', nextSlider);
+};
 
-const dummySlides = [
-//0
-//1
-//2
-//3
-];
+const goToNext = () => (currentSlider < slides.length - 1) ? goToNum(currentSlider + 1) : goToNum(0);
+const goToPrev = () => (currentSlider > 0) ? goToNum(currentSlider - 1) : goToNum(slides.length - 1);
 
-for (let i = 0; i < buttons.length; i++) {
-   buttons[i].addEventListener('click', () => (i === 0) ? console.log('Prev Clicked') : console.log('Next Clicked'));
+for (let i = 0; i < slideBtns.length; i++) {
+   slideBtns[i].addEventListener('click', () => (i === 0) ? goToPrev() : goToNext());
 }
+
+updateCarousel();

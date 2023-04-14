@@ -381,10 +381,6 @@
    padding-left:10px;
 }
 
-.slide-ctrl-container button i {
-   /* pointer-events:none; */
-}
-
 .modal {
    display:flex;
    justify-content:center;
